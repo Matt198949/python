@@ -1,0 +1,7 @@
+Fred = 200
+print(Fred)
+Fred = 200
+john = Fred
+print(john)
+number_of_coins = 200
+print(number_of_coins)
