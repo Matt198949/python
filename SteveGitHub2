@@ -1,0 +1,31 @@
+>>> months = range(1, 13)
+>>> plot(months, nyc_temp_2000, months,
+nyc_temp_2006, months, nyc_temp_2012)
+>>> from pylab import legend
+>>> legend([2000, 2006, 2012])
+>>> nyc_temp = [53.9, 56.3, 56.4, 53.4, 54.5,
+55.8, 56.8, 55.0, 55.3, 54.0, 56.7, 56.4, 57.3]
+>>> plot(nyc_temp, marker='o')
+>>> from pylab import plot, savefig >>> x = [1, 2, 3]
+>>> y = [2, 4, 6]
+>>> plot(x, y)
+>>> savefig('mygraph.png')
+>>> shortlist = [1, 2, 3] >>> sum(shortlist)
+>>> samplelist = [4, 1, 3] >>> samplelist.sort()
+>>> samplelist
+>>> simplelist = [4, 2, 1, 3, 4] >>> from collections import Counter
+>>> c = Counter(simplelist)
+>>> c.most_common()
+[(4, 2), (1, 1), (2, 1), (3, 1)]
+>>> mode = c.most_common(1) >>> mode
+[(4, 2)] v>>> mode[0](4, 2)
+>>> mode[0][0]4
+>>> simple_list1 = [1, 2, 3]
+>>> simple_list2 = [4, 5, 6]
+>>> for x, y in zip(simple_list1, simple_list2):
+print(x, y)
+>>> x = [1, 2, 3, 4]
+>>> y = [2, 4, 6, 8]
+>>> import matplotlib.pyplot as plt
+u>>> plt.scatter(x, y)
+<matplotlib.collections.PathCollection object at 0x7f351825d550 >>> plt.show()
