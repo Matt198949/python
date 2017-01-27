@@ -1,0 +1,84 @@
+>>> from sympy import Symbol, summation,
+pprint >>> x = Symbol('x')
+>>> n = Symbol('n')
+u >>> s = summation(x**n/n, (n, 1, 5)) >>> pprint(s)
+>>> from sympy import Poly, Symbol, solve_poly_inequality
+>>> x = Symbol('x')
+u>>> ineq_obj = -x**2 + 4 < 0 v>>> lhs = ineq_obj.lhs
+w>>> p = Poly(lhs, x)
+x>>> rel = ineq_obj.rel_op
+>>> solve_poly_inequality(p, rel)
+>>> from sympy import Symbol, Poly, solve_rational_inequalities
+>>> x = Symbol('x')
+u>>> ineq_obj = ((x-1)/(x+2)) > 0
+>>> lhs = ineq_obj.lhs
+v>>> numer, denom = lhs.as_numer_denom()
+>>> p1 = Poly(numer)
+>>> p2 = Poly(denom)
+>>> rel = ineq_obj.rel_op
+w>>> solve_rational_inequalities([[((p1, p2), rel)]])
+>>> from sympy import Symbol, solve, solve_univariate_inequality,
+sin >>> x = Symbol('x')
+>>> ineq_obj = sin(x) - 0.6 > 0
+>>> solve_univariate_inequality(ineq_obj, x, relational=False)
+>>> x = Symbol('x')
+>>> expr = x**2 - 4
+>>> expr.is_polynomial() True
+>>> expr = 2*sin(x) + 3 >>> expr.is_polynomial()
+>>> expr = (2+x)/(3+x)
+>>> expr.is_rational_function() True
+>>> expr = 2+x
+>>> expr.is_rational_function() True
+>>> expr = 2+sin(x)
+>>> expr.is_rational_function() False
+>>> from sympy import FiniteSet >>> s = FiniteSet(2, 4, 6)
+>>> s
+>>> from sympy import FiniteSet
+>>> from fractions import Fraction
+>>> s = FiniteSet(1, 1.5, Fraction(1, 5)) >>> s
+>>> members = [1, 2, 3]
+>>> s = FiniteSet(*members) >>> s
+>>> from sympy import FiniteSet >>> members = [1, 2, 3, 2]
+>>> FiniteSet(*members)
+>>> from sympy import FiniteSet >>> s = FiniteSet(1, 2, 3)
+>>> for member in s:
+>>> from sympy import FiniteSet >>> s = FiniteSet(3, 4, 5)
+>>> t = FiniteSet(5, 4, 3)
+>>> s == t
+>>> s = FiniteSet(1) >>> t = FiniteSet(1,2) >>> s.is_subset(t) True
+>>> t.is_subset(s) False
+>>> s = FiniteSet(1, 2, 3)
+>>> ps = s.powerset()
+>>> ps
+>>> from sympy import FiniteSet >>> s = FiniteSet(1, 2, 3)
+>>> t = FiniteSet(1, 2, 3)
+>>> s.is_proper_subset(t)
+False
+>>> t.is_proper_superset(s) False
+>>> t = FiniteSet(1, 2, 3, 4) >>> s.is_proper_subset(t) True
+>>> t.is_proper_superset(s) True
+>>> from sympy import FiniteSet >>> s = FiniteSet(1, 2, 3)
+>>> t = FiniteSet(2, 4, 6)
+>>> s.union(t)
+>>> from sympy import FiniteSet >>> s = FiniteSet(1, 2, 3)
+>>> t = FiniteSet(2, 4, 6)
+>>> u = FiniteSet(3, 5, 7)
+>>> s.union(t).union(u)
+>>> s = FiniteSet(1, 2) >>> t = FiniteSet(2, 3) >>> s.intersect(t)
+>>> from sympy import FiniteSet >>> s = FiniteSet(1, 2)
+>>> t = FiniteSet(3, 4)
+>>> p = s*t >>> p
+>>> from sympy import FiniteSet >>> s = FiniteSet(1, 2)
+>>> p = s**3 >>> p
+>>> from sympy import FiniteSet
+>>> s = FiniteSet(1, 2, 3, 4, 5, 6) >>> a = FiniteSet(2, 3, 5)
+>>> b = FiniteSet(1, 3, 5)
+u>>> e = a.union(b) >>> len(e)/len(s)
+>>> from sympy import FiniteSet
+>>> s = FiniteSet(1, 2, 3, 4, 5, 6) >>> a = FiniteSet(2, 3, 5)
+>>> b = FiniteSet(1, 3, 5)
+>>> e = a.intersect(b)
+>>> len(e)/len(s)
+>>> import random
+>>> x = [1, 2, 3, 4] u>>> random.shuffle(x)
+>>> x
