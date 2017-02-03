@@ -1,0 +1,55 @@
+>>> import matplotlib.pyplot as plt
+>>> x = [1, 2, 3]
+>>> y = [1, 2, 3]
+>>> plt.plot(x, y)
+[<matplotlib.lines.Line2D object at 0x7fe822d67a20>]
+>>> plt.show()
+>>> import matplotlib.pyplot as plt >>> x = [1, 2, 3]
+>>> y = [1, 2, 3]
+u>>> fig = plt.figure() v>>> ax = plt.axes()
+>>> plt.plot(x, y)
+[<matplotlib.lines.Line2D object at 0x7f9bad1dcc18>]
+ >>> plt.show()
+ >>> from sympy import Symbol
+>>> theta = Symbol('theta')
+u>>> math.sin(theta) + math.sin(theta)
+>>> from sympy import sin, solve, Symbol >>> u = Symbol('u')
+>>> t = Symbol('t')
+>>> g = Symbol('g')
+>>> theta = Symbol('theta') >>> solve(u*sin(theta)-g*t, t)
+>>> from sympy import Symbol >>> x = Symbol('x')
+>>> if (x+5) > 0:
+                 print('Do Something')
+             else:
+                 print('Do Something else')
+
+>>> x = Symbol('x', positive=True) >>> if (x+5) > 0:
+                 print('Do Something')
+             else:
+                 print('Do Something else')
+>>> from sympy import Limit, Symbol, S v>>> x = Symbol('x')
+w>>> Limit(1/x, x, S.Infinity)
+>>> from sympy import Symbol, Limit, S >>> p = Symbol('p', positive=True)
+>>> r = Symbol('r', positive=True)
+>>> t = Symbol('t', positive=True)
+>>> Limit(p*(1+r/n)**(n*t), n, S.Infinity).doit() p*exp(r*t)
+>>> from sympy import Symbol, Limit
+>>> t = Symbol('t') u>>> St = 5*t**2 + 2*t + 8
+>>> t1 = Symbol('t1')
+>>> delta_t = Symbol('delta_t')
+v>>> St1 = St.subs({t: t1})
+w >>> St1_delta = St.subs({t: t1 + delta_t})
+>>> from sympy import Derivative, Symbol >>> x = Symbol('x')
+>>> f = (x**3 + x**2 + x)*(x**2+x)
+>>> Derivative(f, x).doit()
+>>> from sympy import Symbol, solve, Derivative >>> x = Symbol('x')
+>>> f = x**5 - 30*x**3 + 50*x
+>>> d1 = Derivative(f, x).doit()
+>>> A = critical_points[2]
+>>> B = critical_points[0]
+>>> C = critical_points[1]
+>>> D = critical_points[3]
+>>> d2.subs({x:B}).evalf() 127.661060789073
+>>> d2.subs({x:C}).evalf() -127.661060789073
+>>> d2.subs({x:A}).evalf() -703.493179468151
+>>> d2.subs({x:D}).evalf() 703.493179468151
