@@ -1,0 +1,56 @@
+>>> from sympy import Symbol, solve, Derivative >>> x = Symbol('x')
+>>> f = x**5 - 30*x**3 + 50*x
+>>> d1 = Derivative(f, x).doit()
+>>> A = critical_points[2] >>> B = critical_points[0] >>> C = critical_points[1] >>> D = critical_points[3]
+>>> d2.subs({x:B}).evalf() 127.661060789073
+>>> d2.subs({x:C}).evalf() -127.661060789073
+>>> d2.subs({x:A}).evalf() -703.493179468151
+>>> d2.subs({x:D}).evalf() 703.493179468151
+>>> x_min = -5 >>> x_max = 5
+>>> f.subs({x:A}).evalf() 705.959460380365
+>>> f.subs({x:C}).evalf() 25.0846626340294
+>>> f.subs({x:x_min}).evalf() 375.000000000000
+>>> f.subs({x:x_max}).evalf() -375.000000000000
+>>> f.subs({x:B}).evalf() -25.0846626340294
+>>> f.subs({x:D}).evalf() -705.959460380365
+>>> f.subs({x:x_min}).evalf() 375.000000000000
+>>> f.subs({x:x_max}).evalf() -375.000000000000
+>>> from sympy import Integral, Symbol >>> x = Symbol('x')
+>>> k = Symbol('k')
+>>> Integral(k*x, x)
+>>> from sympy import Symbol, exp, sqrt, pi, Integral
+>>> x = Symbol('x')
+>>> p = exp(-(x - 10)**2/2)/sqrt(2*pi)
+>>> Integral(p, (x, 11, 12)).doit().evalf()
+>>> from sympy import Symbol, exp, sqrt, pi, Integral, S
+>>> x = Symbol('x')
+>>> p = exp(-(x – 10)**2/2)/sqrt(2*pi)
+>>> Integral(p, (x, S.NegativeInfinity, S.Infinity)).doit().evalf()
+>>> x = [1, 2, 3, 4]
+>>> x_square = []
+u>>> for n in x:
+v x_square.append(n**2)
+>>> x_square [1, 4, 9, 16]
+>>> x_square = [n**2 for n in x] >>> x_square
+[1, 4, 9, 16]
+>>> x = [1, 2, 3, 4]
+>>> x_square = [n**2 for n in x if n%2 == 0] >>> x_square
+[4, 16]
+>>> d = {'key1': 5, 'key2': 20}
+>>> d = {'key1': 5, 'key2': 20} >>> 'x' in d
+False
+>>> d.keys()
+dict_keys(['key1', 'x', 'key2', 'y']) >>> d.values()
+dict_values([5, 1, 20, 1])
+>>> try: print(1/0)
+             except ValueError:
+                     print('Division unsuccessful')
+def reciprocal(n):
+    try:
+        print(1/n)
+    except TypeError:
+        print('You must specify a number')
+    except ZeroDivisionError:
+        print('Division by 0 is invalid')
+>>> reciprocal(0) Division by 0 is invalid >>> reciprocal('1')
+You must specify a number
